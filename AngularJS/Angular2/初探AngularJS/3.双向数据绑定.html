@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyModule">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令</title>
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script type="text/javascript">
+        var MyModule = angular.module("MyModule",[]);
+ /*       MyModule.constructor("Hello",['$scope',function Hello($scope) {
+            $scope.greeting = 'Hello'
+        }]);*/
+    </script>
+</head>
+<body>
+<div>
+    <input ng-model="greeting.text">
+    <p>{{greeting.text}},AngularJS</p>
+</div>
+</body>
+</html>

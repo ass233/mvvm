@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Angular.bind</title>
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <script>
+/*        function show(n1,n2) {
+            alert(n1);
+            alert(n2);
+            alert(this);
+        }
+        angular.bind(document,show)(3,4);*/
+        //angular.copy();//拷贝对象
+/*        var a = {
+            name:'hello'
+        };
+        var b = {
+            age:'20'
+        };
+        //var c = angular.copy(a);
+        var c = angular.copy(a,b); //a把所有的值覆盖给了b
+
+        console.log(c);*/
+
+        //angular.extend();对象复制也叫对象继承
+        var a = {
+            name:'hello'
+        };
+        var b = {
+            age:'20'
+        };
+        var c = angular.extend(b,a);
+        console.log(c)
+    </script>
+</head>
+<body>
+<!--<div ng-controller = "Aaa">
+    <p>{{name}}</p>
+</div>
+<div ng-controller = "Bbb">
+    <p>{{name}}</p>
+</div>-->
+</body>
+</html>

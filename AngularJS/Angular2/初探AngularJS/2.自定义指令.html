@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MyModule">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义指令</title>
+    <script type="text/javascript" src="../angular.min.js"></script>
+    <script type="text/javascript">
+        var MyModule = angular.module("MyModule",[]);
+        MyModule.directive("hello",function () {
+            return {
+                restrict:'E',
+                template:'<div>Hi everyone!</div>',
+                replace:true
+            }
+        });
+    </script>
+</head>
+<body>
+<hello>111</hello>
+</body>
+</html>

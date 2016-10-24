@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原始的html</title>
+</head>
+<body>
+<!--双Mustache标签将数据解析为纯文本而不是HTML。为了输出真的HTML字符串，需要用三个Mustache标签-->
+<div>{{{raw_html}}</div>
+在网站上动态渲染任意 HTML 是非常危险的，因为容易导致 XSS 攻击。记住，只对可信内容使用 HTML 插值，永不用于用户提交的内容。
+
+</body>
+</html>

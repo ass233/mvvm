@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>AngularJS</title>
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <script>
+        function aa($scope) {
+            $scope.name = 'Hello world!';
+            $scope.age = '20';
+        }
+    </script>
+</head>
+<body>
+<div ng-controller = "aa">
+    <p>{{name}}</p>
+    <p>{{age}}</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>12.filter</title>
+    <script src="../Angular2/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        /* m1.controller('Aaa',['$scope',function ($scope) {*/
+        m1.controller('Aaa',['$scope','$filter', function ($scope,$filter) {
+        /* $scope.name = '123232994.78637';*/
+             $scope.name = $filter('date')('9890828','hh');
+             /*$scope.name = {"name":"hello","age":"20"};*/
+             /*$scope.name = 'hello';??????*/
+             /*$scope.name = ['a,','b','c'];*/
+             /*$scope.name = '29219378273';*/
+             /*$scope.name = [
+                 {color:"red",age:"20"},
+                 {color:"yellow",age:"30"},
+                 {color:"blue",age:"40"},
+                 {color:"green",age:"10"}
+             ];*/
+
+/*             $scope.name = [
+                 {color:"red",age:"20"},
+                 {color:"yellow",age:"30"},
+                 {color:"blue",age:"40"},
+                 {color:"green",age:"10"}
+             ];*/
+         }]);
+    </script>
+</head>
+<body>
+<div ng-controller = "Aaa">
+   <!-- <p>{{name | currency:"￥" }}</p>-->
+   <!-- <p>{{ name | number:2 }}</p>-->
+   <!-- <p>{{ name | uppercase }}</p>-->
+    <!--<pre>{{name | json}}</pre>-->
+   <!-- <p>{{ name | limitTo:2}}</p>-->
+   <!-- <p>{{ name | date}}</p>-->
+    <!--<p>{{ name | orderBy:'age':true}}</p>-->
+   <!-- <p>{{ name | filter:'l': true}}</p>????????-->
+    <p>{{ name }}</p>
+</div>
+</body>
+</html>

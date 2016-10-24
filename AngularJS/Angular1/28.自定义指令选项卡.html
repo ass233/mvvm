@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myApp" >
+<head>
+    <meta charset="UTF-8">
+    <title>标签指令详解</title>
+    <style>
+        #div1 div{ width: 200px;height: 200px; border: 1px solid red; display: none}
+        #div1 input.active{ background: red;}
+    </style>
+    <script src="../Angular2/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[ ]);
+        m1.directive('myTab',function () {
+            return {
+                restrict:'E',
+                replace: true,
+                /*template:  '<div id="div1">\
+                            <input class="active" type="button" value="1111">\
+                            <input type="button"value="2222">\
+                            <input type="button" value="3333">\
+                            <div style="display: block">1111</div>\
+                            <div>2222</div>\
+                            <div>3333</div>\
+                            </div>'*/
+                templateUrl:'temp2.html'
+            };
+        });
+
+        m1.controller('Aaa',['$scope',function ($scope) {
+
+        }]);
+    </script>
+</head>
+<body>
+<my-tab></my-tab>
+<!--<div id="div1">
+    <input class="active" type="button" value="1111">
+    <input type="button"value="2222">
+    <input type="button" value="3333">
+    <div style="display: block">1111</div>
+    <div>2222</div>
+    <div>3333</div>
+</div>-->
+</body>
+</html>

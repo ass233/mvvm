@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myApp" >
+<head>
+    <meta charset="UTF-8">
+    <title>标签指令详解</title>
+    <script src="../Angular2/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[ ]);
+        m1.controller('Aaa',['$scope',function ($scope) {
+            $scope.text ="hello";
+        }]);
+    </script>
+</head>
+<body>
+
+<div  ng-controller = "Aaa" >
+    <form novalidate name="myForm">
+        <input type="email" name="myText" ng-model = "text">
+        <div>{{myForm.myText.$valid}}</div>
+        <div>{{myForm.myText.$invalid}}</div>
+        <div>{{myForm.myText.$pristine}}</div>
+        <div>{{myForm.myText.$dirty}}</div>
+        <div>{{myForm.myText.$error}}</div>
+    </form>
+</div>
+</body>
+</html>

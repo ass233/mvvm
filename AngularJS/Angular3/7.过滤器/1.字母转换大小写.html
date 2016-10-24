@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>字母转换成大写</title>
+    <script type="text/javascript" src="../js/angular.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',[]);
+        app.controller('myCtrl',['$scope','$filter',function ($scope,$filter) {
+            $scope.name = $filter('lowercase')('Ari');
+        }]);
+    </script>
+</head>
+<body>
+<div ng-controller="myCtrl">{{name | lowercase}}</div>
+</body>
+</html>

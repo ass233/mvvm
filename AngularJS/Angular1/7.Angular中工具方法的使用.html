@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <script>
+       /* var a = [];
+        console.log(angular.isArray(a));*/
+/*       window.onloud = function () {
+          console.log( angular.isElement(document.body));
+       }*/
+       /* var a = [];
+        var b = [];
+        console.log(angular.equals(a,a));*/
+
+       var value = {'name':'hello','age':'20'};
+       var result = [];
+       //var value = ['a','b','c'];//数组或者对象
+        angular.forEach(value,function (value,i) {
+     /*       console.log(value);
+            console.log(i);*/
+            this.push(value+i);
+        },result);
+        console.log(result);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

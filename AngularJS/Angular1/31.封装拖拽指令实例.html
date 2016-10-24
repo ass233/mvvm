@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myApp" >
+<head>
+    <meta charset="UTF-8">
+    <title>标签指令详解</title>
+    <style>
+        #div1{
+            height: 100px;width: 100px; background: red;
+        }
+    </style>
+    <script src="../Angular2/angular.min.js"></script>
+    <script src="../jquery-3.1.1.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[ ]);
+        m1.directive('myDrag',function () {
+            return {
+                restrict:'A',
+                link : function (scope,element,attr) {
+                    var disX = 0;
+                    var disY = 0;
+                    element.on('mousedown',function (ev) {
+                        var This = this;
+                        disX = ev.pageX - $(this).offset().left;
+                        disY = ev.pageY - $(this).offset().top;
+                        $(document).on('mousemove',function (ev) {
+                            $(This).css('left',ev.pageX - disX);
+                            $(This).css('top',ev.pageY - disY);
+                        });
+                        $(document).on('mouseup',function () {
+                            $(document).off();
+                        });
+                        return false;
+                    })
+
+                }
+            };
+        });
+
+        m1.controller('Aaa',['$scope',function ($scope) {
+
+        }]);
+    </script>
+</head>
+<body ng-controller="Aaa">
+<div id="div1" my-drag></div>
+</body>
+</html>

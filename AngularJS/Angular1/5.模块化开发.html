@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>模块化开发</title>
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller('Aaa',['$scope',function ($scope) {
+            $scope.name = 'hello';
+        }]);
+        m1.controller('Bbb',['$scope',function ($scope) {
+            $scope.name = 'Hi';
+        }]);
+        var m2 = angular.module('myApp2',[]);
+        var m3 = angular.module('myApp3',[]);
+    </script>
+</head>
+<body>
+<div ng-controller = "Aaa">
+    <p>{{name}}</p>
+</div>
+<div ng-controller = "Bbb">
+    <p>{{name}}</p>
+</div>
+</body>
+</html>

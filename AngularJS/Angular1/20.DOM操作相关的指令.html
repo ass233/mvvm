@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作相关的指令</title>
+    <script src="../Angular2/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[ ]);
+        m1.controller('Aaa',['$scope',function ($scope) {
+            $scope.bBtn = true;
+            $scope.text = 'hello';
+        }]);
+    </script>
+</head>
+<body>
+<div ng-controller = "Aaa"  ng-app = "myApp">
+    <input type="checkbox" ng-model = "bBtn">
+    <!--<div ng-show = "bBtn">{{text}}</div>-->
+    <!--<div ng-if = "bBtn">{{text}}</div>-->
+    <div ng-switch on= "bBtn">
+        <p ng-switch-default>默认的效果</p>
+        <p ng-switch-when = "false">切换的效果</p>
+    </div>
+
+    <details ng-open = "bBtn">
+        <summary>Copyright2011.</summary>
+        <p>jldjladlam jakdljclajclmajldjlacmdjlmaxdslkajdkflchj klan ck lkvlk snklsn ksl lvc</p>
+    </details>
+</div>
+</body>
+</html>

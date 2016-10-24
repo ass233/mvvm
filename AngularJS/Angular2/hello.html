@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myModule">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript">
+        var myModule = angular.module("myModule",[]);
+        myModule.run(function ($templateCache) {
+            $templateCache.put("hello.html","<div>111111111111111</div>");
+        });
+        myModule.directive("hello",function () {
+            return {
+                restrict:'AEMC',
+                template:'<div>Hi Angular.js</div>',
+                replace:true
+            }
+        });
+    </script>
+
+</head>
+<body>
+<hello></hello>
+<div>1111111</div>
+</body>
+</html>

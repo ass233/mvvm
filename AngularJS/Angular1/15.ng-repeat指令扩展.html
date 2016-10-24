@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>ng-repeat</title>
+    <style>
+        .active{
+            background: red;
+        }
+        .active2{
+            background: green;
+        }
+    </style>
+    <script src="../Angular2/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+        m1.controller('Aaa',['$scope',function ($scope) {
+            $scope.dataList = [
+                'aaaa','bbb','ccccc','dddd','eeee','ffff'
+            ];
+        }]);
+    </script>
+</head>
+<body>
+<div ng-controller = "Aaa" ng-app = 'myApp'>
+<!--    <ul>
+        <li class="{{$even ? 'active':'active2'}}" ng-repeat = "data in dataList">{{ data }}</li>
+    </ul>-->
+    <div ng-repeat-start = "data in dataList">{{data}}</div>
+    <span>{{data}}</span>
+    <div ng-repeat-end = "data in dataList">{{data}}</div>
+</div>
+</body>
+</html>

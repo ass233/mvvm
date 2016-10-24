@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = 'myApp'>
+<head>
+    <meta charset="UTF-8">
+    <title>数据显示优化处理及插件简介</title>
+    <script src="../Angular2/angular.min.js"></script>
+    <script src="//cdn.bootcss.com/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',['ngSanitize']);
+        m1.controller('Aaa',['$scope',function ($scope) {
+           /* $scope.text = '<h1>hello</h1>';*/
+            $scope.text = 'hello';
+        }]);
+    </script>
+</head>
+<body>
+<div ng-controller = "Aaa" >
+    <!--<div>{{text}},{{text}}</div>-->
+    <!--<div ng-bind-template = "{{text}},{{text}}"></div>-->
+    <!--<div ng-bind-html = "text"></div>-->
+    <div ng-cloak>{{text}}</div>
+</div>
+<script>
+    alert(1);
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "myApp" >
+<head>
+    <meta charset="UTF-8">
+    <title>标签指令详解</title>
+    <script src="../Angular2/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[ ]);
+        m1.directive('asHello',function () {
+           return {
+               restrict:'EACM',
+               replace: true,
+               template:'<div>hello Angular</div>'
+           };
+        });
+
+        m1.controller('Aaa',['$scope',function ($scope) {
+
+        }]);
+    </script>
+</head>
+<body>
+
+<as-hello></as-hello>
+<p as-hello></p>
+<!--<P class="hello"></P>
+&lt;!&ndash;directive:hello &ndash;&gt;-->
+<div ng-controller = "Aaa" >
+
+</div>
+</body>
+</html>

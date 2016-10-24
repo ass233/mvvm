@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular.bootstrap</title>
+    <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+</head>
+<body>
+<div ng-controller = "Aaa">
+    <p>{{name}}</p>
+</div>
+<div ng-controller = "Bbb">
+    <p>{{name}}</p>
+</div>
+<script>
+    var m1 = angular.module('myApp1',[]);
+    var m2 = angular.module('myApp2',[]);
+    m1.controller('Aaa',['$scope',function ($scope) {
+        $scope.name = 'hello';
+    }]);
+    m2.controller('Bbb',['$scope',function ($scope) {
+        $scope.name = 'Hi';
+    }]);
+
+        var aDiv = document.getElementsByTagName('div');
+        angular.bootstrap(aDiv[0],['myApp1']);
+        angular.bootstrap(aDiv[1],['myApp2']);
+
+</script>
+</body>
+</html>

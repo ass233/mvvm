@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>标签指令详解</title>
+    <script src="../Angular2/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[ ]);
+        m1.controller('Aaa',['$scope',function ($scope) {
+            $scope.colors = [
+                {name:'red'},
+                {name:'yellow'},
+                {name:'blue'}
+            ];
+        }]);
+    </script>
+</head>
+<body>
+
+<div  ng-controller = "Aaa" ng-app = "myApp">
+    <a href="">{{myColor.name}}</a>
+    <select ng-options ="color.name for color in colors" ng-model = "myColor">
+
+    </select>
+    <form novalidate>
+        <input type="email">
+    </form>
+</div>
+<a href="">bbbbbbbbbbb</a>
+</body>
+</html>

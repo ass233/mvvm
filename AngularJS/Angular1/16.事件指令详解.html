@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>事件指令详解</title>
+    <script src="../Angular2/angular.min.js"></script>
+    <script>
+        var m1 = angular.module('myApp',[]);
+       m1.controller('Aaa',['$scope',function ($scope) {
+          /*  $scope.dataList = [
+                'aaaa','bbb','ccccc','dddd','eeee','ffff'
+            ];*/
+        }]);
+    </script>
+</head>
+<body>
+<div ng-controller = "Aaa" ng-app = 'myApp'>
+    <input type="checkbox" ng-model = "aaaa">
+    <select>
+        <option>111</option>
+        <option ng-selected = "aaaa">2222</option>
+    </select>
+
+    <input type="text" ng-change = "bbb = 'hello'" ng-model = "bbb">{{bbb}}
+    <input type="text" value="aaaaasdada" ng-copy = "ccc=true">{{ccc}}
+</div>
+</body>
+</html>
