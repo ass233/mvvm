@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue数据绑定</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Vue.js数据绑定</h2>
+    <div id="app">
+        <img v-bind:src="user.photo">
+        <div>姓名:{{user.name}}</div>
+        <div>简介:{{{user.profile}}}</div>
+        <div>简介:{{user.profile}}</div>
+    </div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            user:{
+                photo:'http://tva1.sinaimg.cn/crop.0.0.400.400.180/6d2828b2jw8f193hei9uij20b40b4mxd.jpg',
+                name:'Bill Gates',
+                profile:'<div><strong>技术专家</strong>、<strong>商业领袖</strong>与<strong>慈善家</strong>，比尔及梅琳达·盖茨基金会联席主席。</div><div><a href="http://www.weibo.com/gates" target="_blank">访问微博</a></div>'
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

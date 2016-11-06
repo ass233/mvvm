@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload= function () {
+            var oUl = document.getElementById('ul');
+            var aLi = oUl.getElementsByTagName('li');
+            for (var i = 0;i<aLi.length;i++){
+                (function (index) {
+                    aLi[i].onclick = function () {
+                        alert(index);
+                    }
+                })(i);
+            }
+        }
+    </script>
+    <style>
+        ul li{
+            height: 30px;
+            border: 1px solid #ccc;
+            line-height: 30px;
+        }
+        .a span{
+            border: 1px solid #cccccc ;
+            width: 100%;
+            float: left;
+        }
+        ul li:nth-child(1){
+            margin-bottom: 100px;
+        }
+        ul li:nth-child(2){
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul">
+    <li>111111111111111111111111111111111</li>
+    <li>111111111111111111111111111111111</li>
+    <li>111111111111111111111111111111111</li>
+    <li>111111111111111111111111111111111</li>
+    <li>111111111111111111111111111111111</li>
+    <li>111111111111111111111111111111111</li>
+    <li>111111111111111111111111111111111</li>
+    <li>111111111111111111111111111111111</li>
+</ul>
+</body>
+</html>

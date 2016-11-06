@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue数据绑定</title>
+    <script type="text/javascript" src="../vue.js"></script>
+    <link rel="stylesheet" href="2Vue.css">
+</head>
+<body>
+<div class="container">
+    <h2>Vue.js数据绑定</h2>
+    <div id="app">
+        <div>
+            <div class="item" @click="subitemsExpanded = !subitemsExpanded">
+                成人票套餐
+                <span class="glyphicon glyphicon-chevron-up" v-show="subitemsExpanded"></span>
+                <span class="glyphicon glyphicon-chevron-down" v-else></span>
+            </div>
+            <div class="subitems" v-show="subitemsExpanded">
+                <div>成人票</div>
+                <div>门票抵用券</div>
+                <div>酒店抵用券</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            subitemsExpanded:true
+        }
+    })
+</script>
+
+</body>
+</html>

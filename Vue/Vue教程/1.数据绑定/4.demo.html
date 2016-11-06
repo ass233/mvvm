@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue数据绑定</title>
+    <script type="text/javascript" src="../vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div>
+        长方形边长:{{a}}m、宽:{{b}}m
+    </div>
+
+    <input type="range" v-model="a">
+    <input type="range" v-model="b">
+
+    <div>
+        长方形面积:{{s}}m<sup>2</sup>
+    </div>
+</div>
+
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            a:6,
+            b:5,
+        },
+        computed:{
+            s:function () {
+                return this.a * this.b
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
